@@ -59,20 +59,27 @@ function Intro() {
   )
 }
 
+//direct solution 1
+// function SkillList() {
+//   return (
+//     <ul className='skill-list'>
+//       {skills.map(skill => (
+//         <li style={{ background: skill.color }}> {skill.skill} {skill.level} { } </li>))}
+//     </ul>
+//   )
+// }
 function SkillList() {
   return (
     <ul className='skill-list'>
       {skills.map(skill => (
-        <li style={{ background: skill.color }}> {skill.skill} {skill.level} { } </li>))}
-      {/* <Skill skill="js" emoji="💪" color="blue" />
-      <Skill skill="react" emoji="👶" color="green" />
-      <Skill skill="css" emoji="😅" color="yellow" /> */}
+        <Skill skillobj={skill} key={skill.skill} />))}
     </ul>
   )
 }
 
-// function Skill({ skill, emoji, color }) {
-//   return <div className='skill' style={{ background: color }}>{skill} {emoji}</div>
-// }
+function Skill({ skillobj }) {
+  return <div className='skill' style={{ background: skillobj.color }}>
+    <li style={{ background: skillobj.color }}> {skillobj.skill} {skillobj.level} </li></div>
+}
 
 export default App
